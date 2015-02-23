@@ -1,5 +1,6 @@
 # iOSTutorialOverlay
 Tutorials are super useful the first time a user runs your iOS app. With JNTutorialOverlays, add tutorial overlays simply and efficiently to your project!
+The overlays are only shown one time: Once the user has tapped it it doesn't come back.
 
 #Install
 Import JNTutorialOverlay.swift in your project
@@ -21,5 +22,5 @@ tutorialOverlay.theme = .Light // Possible values are .Light and .Dark (default)
 tutorialOverlay.corners = .Straight // Possible values are .Straight and .Rounded (default)
 tutorialOverlay.title = "Title"
 tutorialOverlay.message = "Message"
-tutorialOverlay.image = UIImage(named: "")
+tutorialOverlay.image = UIImage(named: "yourPictureName")
 ```

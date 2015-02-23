@@ -222,8 +222,8 @@ class JNTutorialOverlay:UIView{
         
         if let name = self.overlayName{
             // Save in NSUserDefaults as this overlay is not to be shown again
-            //NSUserDefaults.standardUserDefaults().setBool(true, forKey: name)
-            //NSUserDefaults.standardUserDefaults().synchronize()
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: name)
+            NSUserDefaults.standardUserDefaults().synchronize()
         }
         
         // Animate

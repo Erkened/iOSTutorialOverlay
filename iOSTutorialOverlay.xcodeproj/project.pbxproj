@@ -13,6 +13,7 @@
 		522EFA511A97ADB4004CFE33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 522EFA501A97ADB4004CFE33 /* Images.xcassets */; };
 		522EFA541A97ADB4004CFE33 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522EFA521A97ADB4004CFE33 /* LaunchScreen.xib */; };
 		522EFA601A97ADB4004CFE33 /* iOSTutorialOverlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522EFA5F1A97ADB4004CFE33 /* iOSTutorialOverlayTests.swift */; };
+		52F2FA8F1A9A88B100DC63E8 /* JNTutorialOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2FA8E1A9A88B100DC63E8 /* JNTutorialOverlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		522EFA591A97ADB4004CFE33 /* iOSTutorialOverlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTutorialOverlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		522EFA5E1A97ADB4004CFE33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		522EFA5F1A97ADB4004CFE33 /* iOSTutorialOverlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTutorialOverlayTests.swift; sourceTree = "<group>"; };
+		52F2FA8E1A9A88B100DC63E8 /* JNTutorialOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JNTutorialOverlay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				522EFA491A97ADB4004CFE33 /* AppDelegate.swift */,
 				522EFA4B1A97ADB4004CFE33 /* ViewController.swift */,
+				52F2FA8E1A9A88B100DC63E8 /* JNTutorialOverlay.swift */,
 				522EFA4D1A97ADB4004CFE33 /* Main.storyboard */,
 				522EFA501A97ADB4004CFE33 /* Images.xcassets */,
 				522EFA521A97ADB4004CFE33 /* LaunchScreen.xib */,
@@ -161,6 +164,7 @@
 				TargetAttributes = {
 					522EFA431A97ADB4004CFE33 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 934G859M3Y;
 					};
 					522EFA581A97ADB4004CFE33 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -213,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				522EFA4C1A97ADB4004CFE33 /* ViewController.swift in Sources */,
+				52F2FA8F1A9A88B100DC63E8 /* JNTutorialOverlay.swift in Sources */,
 				522EFA4A1A97ADB4004CFE33 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +341,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = iOSTutorialOverlay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = iOSTutorialOverlay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -405,6 +412,7 @@
 				522EFA651A97ADB4004CFE33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		522EFA661A97ADB4004CFE33 /* Build configuration list for PBXNativeTarget "iOSTutorialOverlayTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +421,7 @@
 				522EFA681A97ADB4004CFE33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

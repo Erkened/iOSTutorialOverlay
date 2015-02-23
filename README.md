@@ -8,8 +8,8 @@ Import JNTutorialOverlay.swift in your project. Use at will!
 #Use
 ```swift
 let tutorialOverlay = JNTutorialOverlay(overlayName: "Whatever", width: 300, height: 300, opacity: 0.8, title: "My first tutorial", message: "This is the default overlay")
-tutorialOverlay.showWithBlock(){ tapped in
-    // The overlay has been tapped
+tutorialOverlay.showWithBlock(){ hidden in
+    // The overlay has been tapped and removed
 }
 ```
 
@@ -26,6 +26,7 @@ tutorialOverlay.corners = .Straight // Possible values are .Straight and .Rounde
 tutorialOverlay.title = "Title"
 tutorialOverlay.message = "Message"
 tutorialOverlay.image = UIImage(named: "yourPictureName")
+// Once you're happy with your overlay, call show()
 tutorialOverlay.show() // Use showWithBlock() to know when the overlay has disappeared
 ```
 

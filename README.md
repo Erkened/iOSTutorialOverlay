@@ -24,3 +24,5 @@ tutorialOverlay.title = "Title"
 tutorialOverlay.message = "Message"
 tutorialOverlay.image = UIImage(named: "yourPictureName")
 ```
+
+[Download Birdcast on iOS to see overlays in action](https://itunes.apple.com/us/app/birdcast-rapid-tweeting-for/id966526563?ls=1&mt=8)

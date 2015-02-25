@@ -230,17 +230,6 @@ class JNTutorialOverlay:UIView{
         animateWithPopOut()
     }
     
-    func checkScreenShownBefore(name:String) -> BooleanLiteralType{
-        
-        if let hasBeenShown:AnyObject = NSUserDefaults.standardUserDefaults().objectForKey(name){
-            // If an object was returned, it means that something was shown. No need to create the overlay then!
-            return true
-        }
-        else {
-            return false
-        }
-    }
-    
     /* -------- SETTING METHODS IN ORDER TO AVOIR REPEATING CODE -------- */
     func setStraightCorners(){
         overlayView?.layer.borderWidth = 3
@@ -374,6 +363,18 @@ class JNTutorialOverlay:UIView{
 }
 
 /* -------- CUSTOM METHODS -------- */
+
+func checkScreenShownBefore(name:String) -> BooleanLiteralType{
+    
+    if let hasBeenShown:AnyObject = NSUserDefaults.standardUserDefaults().objectForKey(name){
+        // If an object was returned, it means that something was shown. No need to create the overlay then!
+        return true
+    }
+    else {
+        return false
+    }
+}
+
 func getUIColorObjectFromHex(hex:String, alpha:CGFloat) -> UIColor {
     var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
     

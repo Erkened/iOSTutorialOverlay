@@ -117,24 +117,24 @@ class JNTutorialOverlay:UIView{
     /* -------- INIT METHODS -------- */
     
     // Init with a centred frame and no picture
-    init(overlayName:String, width:CGFloat, height:CGFloat, opacity: CGFloat, title:String?, message:String?){
+    init(overlayName:String, width:CGFloat, opacity: CGFloat, title:String?, message:String?){
         
         super.init(frame: CGRectMake(0, 0, ScreenConstants.width, ScreenConstants.height))
         
         // Centre the frame within the screen
         //super.init(frame:CGRectMake((ScreenConstants.width - width)/2, (ScreenConstants.height - height)/2, width, height))
         // Create the overlay and centre it within the screen
-        createOverlay(CGRectMake((ScreenConstants.width - width)/2, (ScreenConstants.height - height)/2, width, height), overlayName: overlayName, opacity: opacity, title: title, message: message, image: nil)
+        createOverlay(CGRectMake((ScreenConstants.width - width)/2, 0, width, 0), overlayName: overlayName, opacity: opacity, title: title, message: message, image: nil)
     }
     
     // Init with a centred frame and a picture
-    init(overlayName:String, width:CGFloat, height:CGFloat, opacity: CGFloat, title:String?, message:String?, image:UIImage?){
+    init(overlayName:String, width:CGFloat, opacity: CGFloat, title:String?, message:String?, image:UIImage?){
         
         super.init(frame: CGRectMake(0, 0, ScreenConstants.width, ScreenConstants.height))
         // Centre the frame within the screen
         //super.init(frame:CGRectMake((ScreenConstants.width - width)/2, (ScreenConstants.height - height)/2, width, height))
         // Create the overlay and centre it within the screen
-        createOverlay(CGRectMake((ScreenConstants.width - width)/2, (ScreenConstants.height - height)/2, width, height), overlayName: overlayName, opacity: opacity, title: title, message: message, image: image)
+        createOverlay(CGRectMake((ScreenConstants.width - width)/2, 0, width, 0), overlayName: overlayName, opacity: opacity, title: title, message: message, image: image)
     }
     
     // Init with a set frame and no picture
@@ -195,7 +195,7 @@ class JNTutorialOverlay:UIView{
         
         // Prepare the message label
         font = UIFont(name: "Helvetica", size: 16.0)
-        messageLabel = UILabel(frame: CGRectMake(20, 90, overlayView!.frame.width - 40, 0))
+        messageLabel = UILabel(frame: CGRectMake(20, titleLabel!.frame.origin.y + titleLabel!.frame.height + 15, overlayView!.frame.width - 40, 0))
         messageLabel?.numberOfLines = 0
         messageLabel?.textAlignment = .Center
         messageLabel?.font = font!
@@ -216,6 +216,7 @@ class JNTutorialOverlay:UIView{
         overlayView?.addSubview(titleLabel!)
         overlayView?.addSubview(messageLabel!)
         overlayView?.addSubview(imageView!)
+        self.adaptHeight()
         self.addSubview(overlayView!)
     }
     
@@ -281,11 +282,12 @@ class JNTutorialOverlay:UIView{
     func setMessageLabel(message:String){
         self.messageLabel?.text = message
         self.messageLabel?.sizeToFit()
-        self.messageLabel?.frame = CGRectMake(20, 90, overlayView!.frame.width - 40, self.messageLabel!.frame.height)
+        self.messageLabel?.frame = CGRectMake(20, titleLabel!.frame.origin.y + titleLabel!.frame.height + 15, overlayView!.frame.width - 40, self.messageLabel!.frame.height)
         // Move the image if it already exists
         if let image = self.image{
             setImageView(image)
         }
+        self.adaptHeight()
     }
     
     func setImageView(image:UIImage){
@@ -295,8 +297,21 @@ class JNTutorialOverlay:UIView{
         // Set the frame in the middle
         self.imageView?.frame.origin.y = messageLabel!.frame.origin.y + messageLabel!.frame.height + 20
         self.imageView?.frame.origin.x = (overlayView!.frame.width - image.size.width)/2
-        // Finally, set the image
+        // Finally, set the image and resize the overlay
         self.imageView?.image = self.image!
+        self.adaptHeight()
+    }
+    
+    // Find the tallest subview and automatically adapt the height to this height + 20
+    func adaptHeight(){
+        
+        var overlayHeight:CGFloat = 0
+        for subview in self.overlayView!.subviews{
+            
+            overlayHeight = max(overlayHeight, subview.frame.origin.y + subview.frame.size.height)
+        }
+        self.overlayView?.frame.size.height = overlayHeight + 20
+        self.overlayView?.frame.origin.y = (ScreenConstants.height - (overlayHeight + 20))/2
     }
     
     /* -------- ANIMATION METHODS -------- */

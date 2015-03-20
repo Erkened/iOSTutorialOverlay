@@ -310,8 +310,8 @@ class JNTutorialOverlay:UIView{
             
             overlayHeight = max(overlayHeight, subview.frame.origin.y + subview.frame.size.height)
         }
-        self.overlayView?.frame.size.height = overlayHeight + 20
-        self.overlayView?.frame.origin.y = (ScreenConstants.height - (overlayHeight + 20))/2
+        self.overlayView?.frame.size.height = overlayHeight + 32
+        self.overlayView?.frame.origin.y = (ScreenConstants.height - (overlayHeight + 32))/2
     }
     
     /* -------- ANIMATION METHODS -------- */

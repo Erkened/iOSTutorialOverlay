@@ -347,7 +347,7 @@ class JNTutorialOverlay:UIView{
                     
                     self.overlayView!.frame = originalFrame
                     self.showElements()
-                    }, nil)
+                    }, completion: nil)
         })
     }
     
@@ -417,7 +417,7 @@ func getUIColorObjectFromHex(hex:String, alpha:CGFloat) -> UIColor {
         cString = cString.substringFromIndex(advance(cString.startIndex, 1))
     }
     
-    if (countElements(cString) != 6) {
+    if (count(cString) != 6) {
         return UIColor.grayColor()
     }
     

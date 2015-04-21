@@ -2,9 +2,9 @@
 //  AppDelegate.swift
 //  iOSTutorialOverlay
 //
-//  Created by John on 20/02/2015.
+//  Created by Jonathan Neumann on 20/02/2015.
 //  Copyright (c) 2015 Audio Y. All rights reserved.
-//
+//  www.audioy.co
 
 import UIKit
 
